@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="hidden" default="0"/>
+    <field name="MAX_FILE_SIZE" type="hidden" value="1024"/>
+    <field name="ordering"/>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" type="hidden" filter="unset"/>
+    <field name="state" default="0" type="hidden"/>
+    <field name="catid" type="hidden" default="9"/>
+    <field name="title" filter="safehtml" type="text" required="true" label="COM_BLOGGER_FORM_LBL_ITEM_TITLE" description="COM_BLOGGER_FORM_DESC_ITEM_TITLE" hint="COM_BLOGGER_FORM_LBL_ITEM_TITLE"/>
+    <field name="description" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_BLOGGER_FORM_LBL_ITEM_DESCRIPTION" description="COM_BLOGGER_FORM_DESC_ITEM_DESCRIPTION" hint="COM_BLOGGER_FORM_LBL_ITEM_DESCRIPTION"/>
+    <field name="intro_img" type="file" accept="image/*" label="COM_BLOGGER_FORM_LBL_ITEM_INTRO_IMG" description="COM_BLOGGER_FORM_DESC_ITEM_INTRO_IMG" hint="COM_BLOGGER_FORM_LBL_ITEM_INTRO_IMG"/>
+    <field name="full_img" type="file" accept="image/*" label="COM_BLOGGER_FORM_LBL_ITEM_FULL_IMG" description="COM_BLOGGER_FORM_DESC_ITEM_FULL_IMG" hint="COM_BLOGGER_FORM_LBL_ITEM_FULL_IMG"/>
+    <field name="language" default="en-GB" type="hidden" label="COM_BLOGGER_FORM_LBL_ITEM_LANGUAGE"/>
+  </fieldset>
+</form>
