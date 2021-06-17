@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Search" option="View">
+        <message>
+                        <![CDATA[Search]]>
+        </message>
+	</layout>
+	
+			<fields name="request">
+				<fieldset name="request"
+					addfieldpath="/administrator/components/com_categories/models/fields"
+				>
+					
+				</fieldset>
+			</fields>
+			
+</metadata>
