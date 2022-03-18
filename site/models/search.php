@@ -158,6 +158,14 @@ class BloggerModelSearch extends \Joomla\CMS\MVC\Model\ListModel
 		{
 			$query->where("a.`title` LIKE '%" . $db->escape($search) . "%' OR a.`description` LIKE '%" . $db->escape($search) ."%'");
 		}
+
+		// Filtering date
+		$date = $app->input->get('date', '');
+
+		if ($date != '')
+		{
+			$query->where("a.`publish_up` = " . $db->quote(date('Y-m.d', $date)));
+		}
             
 		// Add the list ordering clause.
 		$orderCol  = $this->state->get('list.ordering', "a.id");

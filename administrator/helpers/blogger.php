@@ -44,6 +44,12 @@ class BloggerHelper
 			JToolBarHelper::title('Blogger: JCATEGORIES (COM_BLOGGER_TITLE_ITEMS)');
 		}
 
+		JHtmlSidebar::addEntry(
+			Text::_('COM_BLOGGER_TITLE_AUTHORS'),
+			'index.php?option=com_blogger&view=authors',
+			$vName == 'authors'
+		);
+
 	}
 
 	/**

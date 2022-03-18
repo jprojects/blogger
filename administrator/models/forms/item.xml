@@ -13,22 +13,18 @@
       <option value="2">JARCHIVED</option>
       <option value="-2">JTRASHED</option>
     </field>
-    <field name="publish_up" type="calendar" default="0000-00-00 00:00:00" label="COM_BLOGGER_FORM_LBL_ITEM_PUBLISH_UP" description="COM_BLOGGER_FORM_DESC_ITEM_PUBLISH_UP" size="45" labelclass="control-label"/>
+    <field name="publish_up" type="calendar" default="NOW" label="COM_BLOGGER_FORM_LBL_ITEM_PUBLISH_UP" description="COM_BLOGGER_FORM_DESC_ITEM_PUBLISH_UP" size="45" labelclass="control-label"/>
     <field name="catid" extension="com_blogger.items" type="category" required="true" label="COM_BLOGGER_FORM_LBL_ITEM_CATID" description="COM_BLOGGER_FORM_DESC_ITEM_CATID" hint="COM_BLOGGER_FORM_LBL_ITEM_CATID"/>
     <field name="title" filter="safehtml" type="text" required="true" label="COM_BLOGGER_FORM_LBL_ITEM_TITLE" description="COM_BLOGGER_FORM_DESC_ITEM_TITLE" hint="COM_BLOGGER_FORM_LBL_ITEM_TITLE"/>
     <field name="description" editor="|" buttons="true" filter="JComponentHelper::filterText" type="editor" label="COM_BLOGGER_FORM_LBL_ITEM_DESCRIPTION" description="COM_BLOGGER_FORM_DESC_ITEM_DESCRIPTION" hint="COM_BLOGGER_FORM_LBL_ITEM_DESCRIPTION"/>
     <field name="intro_img" directory="" type="media" label="COM_BLOGGER_FORM_LBL_ITEM_INTRO_IMG" description="COM_BLOGGER_FORM_DESC_ITEM_INTRO_IMG" hint="COM_BLOGGER_FORM_LBL_ITEM_INTRO_IMG"/>
     <field name="full_img" directory="" type="media" label="COM_BLOGGER_FORM_LBL_ITEM_FULL_IMG" description="COM_BLOGGER_FORM_DESC_ITEM_FULL_IMG" hint="COM_BLOGGER_FORM_LBL_ITEM_FULL_IMG"/>
-    <field name="author" type="text" label="COM_BLOGGER_FORM_LBL_ITEM_AUTHOR" description="COM_BLOGGER_FORM_DESC_ITEM_AUTHOR" hint="COM_BLOGGER_FORM_LBL_ITEM_AUTHOR"/>
+    <field name="author" type="user" label="COM_BLOGGER_FORM_LBL_ITEM_AUTHOR" description="COM_BLOGGER_FORM_DESC_ITEM_AUTHOR" hint="COM_BLOGGER_FORM_LBL_ITEM_AUTHOR"/>
     <field name="tags" filter="safehtml" type="text" label="COM_BLOGGER_FORM_LBL_ITEM_TAGS" description="COM_BLOGGER_FORM_DESC_ITEM_TAGS" hint="COM_BLOGGER_FORM_LBL_ITEM_TAGS"/>
     <field name="language" client="administrator" type="language" label="COM_BLOGGER_FORM_LBL_ITEM_LANGUAGE" description="COM_BLOGGER_FORM_DESC_ITEM_LANGUAGE" hint="COM_BLOGGER_FORM_LBL_ITEM_LANGUAGE"/>
-    <field name="isEvent" type="list" default="0" label="COM_BLOGGER_FORM_LBL_ITEM_ISEVENT" description="COM_BLOGGER_FORM_DESC_ITEM_ISEVENT" labelclass="control-label">
+    <field name="featured" type="list" default="0" label="COM_BLOGGER_FORM_LBL_ITEM_FEATURED" description="COM_BLOGGER_FORM_DESC_ITEM_FEATURED" labelclass="control-label">
       <option value="1">JYES</option>
       <option value="0">JNO</option>
     </field>
-    <field name="event_start" type="calendar" default="0000-00-00 00:00:00" label="COM_BLOGGER_FORM_LBL_ITEM_EVENT_START" description="COM_BLOGGER_FORM_DESC_ITEM_EVENT_START" size="45" labelclass="control-label"/>
-    <field name="event_end" type="calendar" default="0000-00-00 00:00:00" label="COM_BLOGGER_FORM_LBL_ITEM_EVENT_END" description="COM_BLOGGER_FORM_DESC_ITEM_EVENT_END" size="45" labelclass="control-label"/>
-    <field name="event_loc" type="text" label="COM_BLOGGER_FORM_LBL_ITEM_EVENT_LOC" description="COM_BLOGGER_FORM_DESC_ITEM_EVENT_LOC" size="45" labelclass="control-label"/>
-    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" size="45" labelclass="control-label"/>
   </fieldset>
 </form>

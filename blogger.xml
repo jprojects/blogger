@@ -9,9 +9,7 @@
     <authorUrl>http://www.afi.cat</authorUrl>
     <version>CVS: 1.0.0</version>
     <description>COM_BLOGGER_XML_DESCRIPTION</description>
-    
-    
-    
+
     <install> <!-- Runs on install -->
         <sql>
             <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
@@ -44,7 +42,7 @@
     </media>
     <languages folder="site/languages">
         
-			<language tag="en-GB">en-GB/en-GB.com_blogger.ini</language>
+			<language tag="en-GB">en-GB/com_blogger.ini</language>
     </languages>
     <administration>
         <menu>COM_BLOGGER</menu>
@@ -53,6 +51,8 @@
 			<menu link="option=com_blogger&amp;view=items" view="items" alt="Blogger/Items">COM_BLOGGER_TITLE_ITEMS</menu>
 
 			<menu link="option=com_categories&amp;extension=com_blogger.items" view="categories" alt="Blogger/Categories">COM_BLOGGER_ITEMS_CATID</menu>
+
+            <menu link="option=com_blogger&amp;view=authors" view="authors" alt="Blogger/Authors">COM_BLOGGER_TITLE_AUTHORS</menu>
 
         </submenu>
         <files folder="administrator">
@@ -71,8 +71,8 @@
         </files>
         <languages folder="administrator/languages">
             
-			<language tag="en-GB">en-GB/en-GB.com_blogger.ini</language>
-			<language tag="en-GB">en-GB/en-GB.com_blogger.sys.ini</language>
+			<language tag="en-GB">en-GB/com_blogger.ini</language>
+			<language tag="en-GB">en-GB/com_blogger.sys.ini</language>
         </languages>
     </administration>
     <config>
@@ -87,5 +87,3 @@
     </plugins>
     
 </extension>
-<!-- Component built by the Joomla Component Creator -->
-<!-- http://www.component-creator.com/ -->

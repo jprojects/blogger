@@ -42,13 +42,6 @@ $document->addStyleSheet(Uri::root() . 'media/com_blogger/css/list.css');
 	<div class="col-12 col-md-4 mb-3">
 		<div class="card h-100">
 			<div style="background-image:url('<?= JURI::root().$item->intro_img; ?>');max-height:150px;height:150px;width:100%;background-repeat: no-repeat;background-position: center center;background-size: cover;" class="card-img-top">
-			<?php if($item->isEvent == 1): ?>
-			<?php if($item->event_start != '000-00-00 00:00:00' && (date("Y-m-d H:i:s") < date("Y-m-d H:i:s", strtotime($item->event_end)))) : ?>
-			<span class="badge badge-primary"><?= JText::_('COM_BLOGGER_OBERT'); ?></span>
-			<?php else : ?>
-			<span class="badge badge-warning"><?= JText::_('COM_BLOGGER_TANCAT'); ?></span>
-			<?php endif; ?>
-			<?php endif; ?>
 			</div>
 			<div class="card-body">
 				<h5 class="card-title"><?= $item->title; ?></h5>
@@ -62,13 +55,7 @@ $document->addStyleSheet(Uri::root() . 'media/com_blogger/css/list.css');
 				<div><small><?= JText::sprintf('COM_BLOGGER_EVENT_LOCATION', $item->event_loc); ?></small></div>
 				<?php endif; ?>
 				<p class="card-text"><?= $model->getIntro($item->description); ?></p>
-				<a href="index.php?option=com_blogger&view=item&id=<?= $item->id; ?>" class="btn btn-primary">Llegir més</a>
-				<?php if($item->isEvent == 1 && $item->event_start != '000-00-00 00:00:00') : ?>
-					<span class="btn btn-success">Inici: <?= date('d-m-Y', strtotime($item->event_start)); ?></span>
-				<?php endif; ?>
-				<?php if($item->isEvent == 1 && $item->event_end != '000-00-00 00:00:00') : ?>
-					<span class="btn btn-warning">Fi: <?= date('d-m-Y', strtotime($item->event_end)); ?></span>
-				<?php endif; ?>
+				<a href="index.php?option=com_blogger&view=item&id=<?= $item->id; ?>" class="btn btn-primary"><?= JText::_('COM_BLOGGER_READ_MORE'); ?></a>
 			</div>
 		</div>
 	</div>
@@ -77,6 +64,6 @@ $document->addStyleSheet(Uri::root() . 'media/com_blogger/css/list.css');
 	<?= $this->pagination->getPagesLinks(); ?>
 </div>
 <?php else : ?>
-	<div class="col-12">No hi ha cap article o esdeveniment en aquesta categoria o data.</div>
+	<div class="col-12"><?= JText::_('COM_BLOGGER_NO_ITEMS'); ?></div>
 <?php endif; ?>
 </div>		

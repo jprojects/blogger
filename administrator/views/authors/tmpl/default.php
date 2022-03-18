@@ -30,14 +30,14 @@ $saveOrder = $listOrder == 'a.`ordering`';
 
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_blogger&task=items.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_blogger&task=authors.saveOrderAjax&tmpl=component';
     HTMLHelper::_('sortablelist.sortable', 'itemList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 
 $sortFields = $this->getSortFields();
 ?>
 
-<form action="<?php echo Route::_('index.php?option=com_blogger&view=items'); ?>" method="post"
+<form action="<?php echo Route::_('index.php?option=com_blogger&view=authors'); ?>" method="post"
 	  name="adminForm" id="adminForm">
 
 		<div id="j-main-container">
@@ -67,18 +67,11 @@ $sortFields = $this->getSortFields();
 				<?php echo JHtml::_('searchtools.sort',  'COM_BLOGGER_ITEMS_ID', 'a.`id`', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_BLOGGER_ITEMS_CATID', 'a.`catid`', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('searchtools.sort',  'COM_BLOGGER_ITEMS_USERID', 'a.`userid`', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_BLOGGER_ITEMS_TITLE', 'a.`title`', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('searchtools.sort',  'COM_BLOGGER_ITEMS_NAME', 'a.`name`', $listDirn, $listOrder); ?>
 				</th>
-				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_BLOGGER_ITEMS_FEATURED', 'a.`featured`', $listDirn, $listOrder); ?>
-				</th>
-				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_BLOGGER_ITEMS_LANGUAGE', 'a.`language`', $listDirn, $listOrder); ?>
-				</th>
-
 					
 				</tr>
 				</thead>
@@ -127,7 +120,7 @@ $sortFields = $this->getSortFields();
 						</td>
 						<?php if (isset($this->items[0]->state)): ?>
 							<td class="center">
-								<?php echo JHtml::_('jgrid.published', $item->state, $i, 'items.', $canChange, 'cb'); ?>
+								<?php echo JHtml::_('jgrid.published', $item->state, $i, 'authors.', $canChange, 'cb'); ?>
 </td>
 						<?php endif; ?>
 
@@ -136,25 +129,18 @@ $sortFields = $this->getSortFields();
 					<?php echo $item->id; ?>
 				</td>				<td>
 
-					<?php echo $item->catid; ?>
+					<?php echo $item->userid; ?>
 				</td>				<td>
 				<?php if (isset($item->checked_out) && $item->checked_out && ($canEdit || $canChange)) : ?>
-					<?php echo JHtml::_('jgrid.checkedout', $i, $item->uEditor, $item->checked_out_time, 'items.', $canCheckin); ?>
+					<?php echo JHtml::_('jgrid.checkedout', $i, $item->uEditor, $item->checked_out_time, 'authors.', $canCheckin); ?>
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
-					<a href="<?php echo JRoute::_('index.php?option=com_blogger&task=item.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->title); ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_blogger&task=author.edit&id='.(int) $item->id); ?>">
+					<?php echo $this->escape($item->name); ?></a>
 				<?php else : ?>
-					<?php echo $this->escape($item->title); ?>
+					<?php echo $this->escape($item->name); ?>
 				<?php endif; ?>
 
-				</td>
-				<td>
-					<?= $item->featured == 1 ? JText::_('JYES') : JText::_('JNO'); ?>
-				</td>
-				<td>
-
-					<?php echo $item->language; ?>
 				</td>
 
 					</tr>

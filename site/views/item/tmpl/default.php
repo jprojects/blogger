@@ -28,22 +28,6 @@ $txt = JHtml::_('content.prepare', $txt);
 	
 	<div class="col-12 col-md-5 mt-3">
 		<img src="<?= JURI::root().$this->item->full_img; ?>" alt="..." class="img-fluid mb-3">
-		<?php if($this->item->isEvent == 1 && $this->item->event_start != '000-00-00 00:00:00') : ?>
-			<div class="btn btn-success btn-block w-100 mb-1">Inici del esdeveniment: <?= date('d-m-Y', strtotime($this->item->event_start)); ?></div>
-		<?php endif; ?>
-		<?php if($this->item->isEvent == 1 && $this->item->event_end != '000-00-00 00:00:00') : ?>
-			<div class="btn btn-warning btn-block w-100 mb-1">Fi del esdeveniment: <?= date('d-m-Y', strtotime($this->item->event_end)); ?></div>
-		<?php endif; ?>
-		<?php if($this->item->isEvent == 1 && $this->item->event_loc != '') : ?>
-			<div class="btn btn-dark text-light btn-block w-100 mb-1"><?= JText::sprintf('COM_BLOGGER_EVENT_LOCATION', $this->item->event_loc); ?></div>
-		<?php endif; ?>
-		<?php if($this->item->isEvent == 1) : ?>
-		<?php if($this->item->event_start != '000-00-00 00:00:00' && (date("Y-m-d H:i:s") < date("Y-m-d H:i:s", strtotime($this->item->event_end)))) : ?>
-			<div class="btn btn-success btn-block w-100"><?= JText::_('COM_BLOGGER_OBERT'); ?></div>
-		<?php else : ?>
-			<div class="btn btn-primary btn-block w-100"><?= JText::_('COM_BLOGGER_TANCAT'); ?></div>
-		<?php endif; ?>
-		<?php endif; ?>
 	</div>
 	<div class="col-12 col-md-7 mt-3">
 		<?= $txt; ?>

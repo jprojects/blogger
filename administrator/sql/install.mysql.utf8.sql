@@ -15,9 +15,21 @@ CREATE TABLE IF NOT EXISTS `#__blogger_items` (
 `author` VARCHAR(150)  NOT NULL DEFAULT "",
 `tags` VARCHAR(255)  NOT NULL  DEFAULT "",
 `language` VARCHAR(5)  NOT NULL  DEFAULT "",
-`isEvent` TINYINT(1)  NOT NULL  DEFAULT 0,
-`event_start` DATETIME  NOT NULL   DEFAULT "0000-00-00 00:00:00",
-`event_end` DATETIME  NOT NULL   DEFAULT "0000-00-00 00:00:00",
-`event_loc` VARCHAR(255)  NOT NULL ,
+`featured` TINYINT(1)  NOT NULL  DEFAULT 0,
+PRIMARY KEY (`id`)
+) DEFAULT COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `#__blogger_authors` (
+`id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+`ordering` INT(11)  NOT NULL  DEFAULT 0,
+`checked_out` INT(11)  NOT NULL  DEFAULT 0,
+`checked_out_time` DATETIME NOT NULL  DEFAULT "0000-00-00 00:00:00",
+`created_by` INT(11)  NOT NULL  DEFAULT 0,
+`modified_by` INT(11)  NOT NULL  DEFAULT 0,
+`userid` INT(11)  NOT NULL  DEFAULT 0,
+`state` TINYINT(1)  NOT NULL  DEFAULT 1,
+`name` VARCHAR(255)  NOT NULL ,
+`description` TEXT NOT NULL ,
+`img` VARCHAR(255)  NOT NULL  DEFAULT "",
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8mb4_unicode_ci;
